@@ -37,3 +37,10 @@ class RatingSerializer(serializers.ModelSerializer):
         model = Rating
         fields = '__all__'
         read_only_fields = ('rated_by', 'status', 'created_at')
+
+class PaymentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Payment
+        fields = ['id', 'order_id', 'amount', 'currency', 'status', 'created_at']
+        read_only_fields = ['order_id', 'status']
+        
